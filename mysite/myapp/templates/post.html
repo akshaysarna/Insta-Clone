@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Instagram Clone</title>
+</head>
+<body>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="file" class="btn btn-default" value="Add a picture" id="image" name="image">
+        <input type="text" class="caption" id="caption" id="caption" name="caption">
+        <input type="submit"  value="Post" class="btn btn-default">
+
+
+    </form>
+
+
+</body>
+</html>

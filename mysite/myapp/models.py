@@ -5,12 +5,12 @@ from django.db import models
 import uuid
 # Create your models here.
 class UserModel(models.Model):
-    email = models.EmailField(blank=True, max_length=70)
-    username =models.CharField(max_length=30 , unique=True, blank=True)
+    email = models.EmailField(max_length=70)
+    username = models.CharField(max_length=30)
     name = models.CharField(max_length=30)
     phone = models.CharField(max_length=10)
     age = models.IntegerField(default=0)
-    password = models.CharField(max_length=40, blank=True)
+    password = models.CharField(max_length=40)
     verified_mobile= models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
     update_on = models.DateTimeField(auto_now = True)
@@ -26,7 +26,7 @@ class SessionToken(models.Model):
 
 class PostModel(models.Model):
     user =models.ForeignKey(UserModel)
-    image= models.FileField(upload_to="user_images")
+    image= models.FileField(upload_to= "user_images")
     image_url = models.CharField(max_length=255)
     caption = models.CharField(max_length=255)
     created_on = models.DateTimeField(auto_now_add=True)
